@@ -1,5 +1,5 @@
 
-__author__ = '7592047, Khauto'
+__author__ = 'Kenan Khauto'
 
 import tkinter as tk
 import Frames as tf

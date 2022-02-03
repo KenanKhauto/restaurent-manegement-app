@@ -1,5 +1,5 @@
 
-__author__ = '7592047, Khauto'
+__author__ = 'Kenan Khauto'
 
 class Data:
 
