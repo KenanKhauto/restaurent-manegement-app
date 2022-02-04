@@ -3,6 +3,7 @@ __author__ = 'Kenan Khauto'
 
 import tkinter as tk
 import Frames as tf
+from tkinter import messagebox
 
 
 class MainWindow(tk.Frame):
@@ -100,34 +101,16 @@ class SecondWindow(tk.Frame):
             line_frame.e_var.set('0')
             line_frame.num = 0
 
-    def submit_func(self):        
-        self.root = tk.Tk()
-        self.text = 'Succesfully ordered!\nThank you for your order!'
-        self.info_window = tf.InfoFrame(self.root, self.text)
-        w = 270
-        h = 200
-        ws = self.root.winfo_screenmmwidth()
-        hs = self.root.winfo_screenheight()
-        x = (ws/0.6) - (w/3)
-        y = (hs/2) - (h/2)
-        self.root.geometry('%dx%d+%d+%d' % (w, h, x, y))
+    def submit_func(self):
+        messagebox.showinfo('Info', 'Your order has been taken, thank you!')
         self.go_back()
-        self.root.mainloop()
+
 
     def print_bill(self):
         with open('Bill_infos.txt', 'w', encoding='UTF-8') as b:
-            b.write(self.right_frame.text_box.get('1.0', tk.END))      
-        self.root = tk.Tk()
-        self.text = 'Succesfully printed!'
-        self.info_window = tf.InfoFrame(self.root, self.text)
-        w = 208
-        h = 180
-        ws = self.root.winfo_screenmmwidth()
-        hs = self.root.winfo_screenheight()
-        x = (ws/0.6) - (w/3)
-        y = (hs/2) - (h/2)
-        self.root.geometry('%dx%d+%d+%d' % (w, h, x, y))
-        self.root.mainloop()
+            b.write(self.right_frame.text_box.get('1.0', tk.END))
+
+        messagebox.showinfo('Info', 'Successfuly printed')
     
     def go_back(self):
         self.clear_history()
