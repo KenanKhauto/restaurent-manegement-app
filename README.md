@@ -1,3 +1,3 @@
 # restaurent-manegement-app
 
-- my first project on GitHub 
+- To run the program you only need to run the windows.py.
